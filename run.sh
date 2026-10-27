@@ -1,0 +1,1 @@
+python ./src/main.py --path /home/Hamak/PycharmProjects/PythonProject/MyPackageManager/testConfig.csv
