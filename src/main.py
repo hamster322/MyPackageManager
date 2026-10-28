@@ -3,6 +3,8 @@ import csv
 
 import requests
 
+HTTP_NOT_FOUND_CODE = 404
+
 state={
     "packageName": "",
     "path": "",
@@ -50,7 +52,7 @@ def fetch_package_data(url):
     """Загружает JSON-данные о пакете по URL."""
     try:
         response = requests.get(url, timeout=10)
-        if response.status_code == 404:
+        if response.status_code == HTTP_NOT_FOUND_CODE:
             print(f"Пакет не найден по URL: {url}")
             return None
         response.raise_for_status()
